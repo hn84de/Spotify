@@ -1,0 +1,21 @@
+function getValue(stream){
+    let cc = 0;
+    let actualValue = 0;
+    let lenth = stream.length;
+    for(let i=0; i<lenth; i++){
+        if(stream[i] == ","){
+            cc++;
+        }else{
+            let iop = 0;
+        }
+    }
+    switch(cc){
+        case 1:
+            actualValue = (parseInt(stream.substring(0,3))*1000) + parseInt(stream.substring(4,7));
+            break;
+        case 2:
+            actualValue = (parseInt(stream.substring((lenth-7),(lenth-4)))*1000) + parseInt(stream.substring((lenth-3),(lenth))) + (parseInt(stream.substring(0,(lenth-8)))*1000000);
+            break;
+    }
+    return actualValue;
+}
